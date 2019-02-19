@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import DateBasicInfo from '../DateBasicInfo'
 import ConditionsInfo from '../ConditionsInfo'
 import styled from 'styled-components';
-
+import HourlyForecastSummary from '../HourlyForecastSummary';
 const Title = styled.h1`
   color: goldenrod;
 `;
@@ -32,7 +32,7 @@ const CurrentInfoContainer = styled.div`
 
 const ForeCastContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 20px;
   background-color: olivedrab;
 `;
@@ -58,14 +58,7 @@ export default class WeatherComponent extends Component {
             <DateBasicInfo/>
             <ConditionsInfo/>
           </CurrentInfoContainer>
-          <ForeCastContainer>
-            <TemperaturesContainer>
-              Degrees: 8
-            </TemperaturesContainer>
-            <TimeContainer>
-              Time: 10:00
-            </TimeContainer>
-          </ForeCastContainer>
+          <HourlyForecastSummary />
         </TopContainer>
       </WidgetContainer>
     );
