@@ -21,7 +21,7 @@ export default class ConditionsInfo extends Component<MyProps, {}> {
     return (
       <ConditionsInfoContainer>
         <ConditionsInfoText>Rain in last 3h: {rain} mm</ConditionsInfoText>
-        <ConditionsInfoText>Wind Speed: {wind} mps</ConditionsInfoText>
+        <ConditionsInfoText>Wind Speed: {wind} mph</ConditionsInfoText>
       </ConditionsInfoContainer>
     );
   }

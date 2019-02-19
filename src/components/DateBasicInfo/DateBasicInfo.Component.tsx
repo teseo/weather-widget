@@ -40,20 +40,20 @@ const ImageDegreeContainer = styled.div`
 
 type MyProps = {
   cityName: string;
-  date: string;
-  main: string;
+  day: string;
+  description: string;
   icon: string;
   degrees: number;
 }
 export default class DateBasicInfo extends Component<MyProps, {}> {
   render() {
-    const {cityName, date, main, icon, degrees} = this.props;
+    const {cityName, day, description, icon, degrees} = this.props;
     const iconImage = "http://openweathermap.org/img/w/" + icon + ".png";
     return (
       <DateBasicInfoContainer>
         <CityText>{cityName}</CityText>
-        <DateDescriptionText>{date}</DateDescriptionText>
-        <DateDescriptionText>{main}</DateDescriptionText>
+        <DateDescriptionText>{day}</DateDescriptionText>
+        <DateDescriptionText>{description}</DateDescriptionText>
         <ImageDegreeContainer>
           <WeatherImage src={iconImage}/>
           <DegreeText>{degrees}</DegreeText>
