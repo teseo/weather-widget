@@ -38,16 +38,25 @@ const ImageDegreeContainer = styled.div`
   justify-content: flex-start;
 `;
 
-export default class DateBasicInfo extends Component {
+type MyProps = {
+  cityName: string;
+  date: string;
+  main: string;
+  icon: string;
+  degrees: number;
+}
+export default class DateBasicInfo extends Component<MyProps, {}> {
   render() {
+    const {cityName, date, main, icon, degrees} = this.props;
+    const iconImage = "http://openweathermap.org/img/w/" + icon + ".png";
     return (
       <DateBasicInfoContainer>
-        <CityText>Edinburgh, UK</CityText>
-        <DateDescriptionText>Tuesday 11:00 </DateDescriptionText>
-        <DateDescriptionText>Cloudy </DateDescriptionText>
+        <CityText>{cityName}</CityText>
+        <DateDescriptionText>{date}</DateDescriptionText>
+        <DateDescriptionText>{main}</DateDescriptionText>
         <ImageDegreeContainer>
-          <WeatherImage src="http://openweathermap.org/img/w/10n.png"/>
-          <DegreeText>8</DegreeText>
+          <WeatherImage src={iconImage}/>
+          <DegreeText>{degrees}</DegreeText>
         </ImageDegreeContainer>
 
       </DateBasicInfoContainer>

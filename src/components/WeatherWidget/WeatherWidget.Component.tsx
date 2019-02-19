@@ -36,13 +36,52 @@ const BottomContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-export default class WeatherComponent extends Component {
+
+type City = {
+  name: string;
+  country: string;
+}
+type ForecastMain = {
+  temp_max: number;
+  temp_min: number;
+}
+type ForecastRain = {
+  '3h': number;
+  temp_min: number;
+}
+type ForecastWind = {
+  speed: number;
+}
+type ForecastWeather = {
+  description: string;
+  main: string;
+  icon: string;
+}
+type Forecast = {
+  wind: ForecastWind;
+  weather: ForecastWeather;
+  main: ForecastMain;
+  rain: ForecastRain;
+  dt_text: string;
+}
+type MyState = {
+  city: City;
+  list: Array<Forecast>
+  current: Forecast
+}
+export default class WeatherComponent extends Component<{}, MyState> {
   render() {
     return (
       <WidgetContainer>
         <TopContainer>
           <CurrentInfoContainer>
-            <DateBasicInfo/>
+            <DateBasicInfo
+              cityName="Edinburgh, UK"
+              date="Tuesday 11:00"
+              main="Cloudy"
+              icon="10n"
+              degrees={8}
+            />
             <ConditionsInfo/>
           </CurrentInfoContainer>
           <HourlyForecastSummary/>
