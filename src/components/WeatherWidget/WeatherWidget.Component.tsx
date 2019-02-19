@@ -49,6 +49,12 @@ const TimeContainer = styled.div`
   background-color: yellowgreen;
 `;
 
+
+const BottomContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: orchid;
+`;
 export default class WeatherComponent extends Component {
   render() {
     return (
@@ -60,6 +66,9 @@ export default class WeatherComponent extends Component {
           </CurrentInfoContainer>
           <HourlyForecastSummary />
         </TopContainer>
+        <BottomContainer>
+
+        </BottomContainer>
       </WidgetContainer>
     );
   }
