@@ -9,7 +9,6 @@ const WeatherImage = styled.img`
 const DateInfoText = styled.text`
   color: rgb(135, 135, 135);
   font-family: arial, sans-serif;
-
 `;
 const DegreeText = styled.text`
   color: rgb(33, 33, 33);
@@ -28,7 +27,6 @@ const DateDescriptionText = styled(DateInfoText)`
 const DateBasicInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: aliceblue;
   height: 150px;
   padding: 10px;
 `;

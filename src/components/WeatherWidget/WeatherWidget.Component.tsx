@@ -19,14 +19,13 @@ const WidgetContainer = styled.div`
 const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: deeppink;
+  background-color: aquamarine;
 `;
 
 const CurrentInfoContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin: 20px;
-  background-color: lightcoral;
   justify-content: space-between;
 
 `;
