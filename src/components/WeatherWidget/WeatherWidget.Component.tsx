@@ -3,15 +3,12 @@ import DateBasicInfo from '../DateBasicInfo'
 import ConditionsInfo from '../ConditionsInfo'
 import styled from 'styled-components';
 import HourlyForecastSummary from '../HourlyForecastSummary';
-const Title = styled.h1`
-  color: goldenrod;
-`;
+import ForecastSummary from '../ForecastSummary';
 
 const WidgetContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 20px;
-  background-color: coral;
     width: 500px;
 
 `;
@@ -19,41 +16,25 @@ const WidgetContainer = styled.div`
 const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: aquamarine;
 `;
 
 const CurrentInfoContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 20px;
   justify-content: space-between;
 
-`;
-
-const ForeCastContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
-  background-color: olivedrab;
-`;
-
-const TemperaturesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: darkorange;
 `;
 
 const TimeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: yellowgreen;
 `;
 
 
 const BottomContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: orchid;
+  justify-content: space-between;
 `;
 export default class WeatherComponent extends Component {
   render() {
@@ -64,10 +45,10 @@ export default class WeatherComponent extends Component {
             <DateBasicInfo/>
             <ConditionsInfo/>
           </CurrentInfoContainer>
-          <HourlyForecastSummary />
+          <HourlyForecastSummary/>
         </TopContainer>
         <BottomContainer>
-
+          <ForecastSummary/>
         </BottomContainer>
       </WidgetContainer>
     );

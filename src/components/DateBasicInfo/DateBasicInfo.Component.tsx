@@ -28,7 +28,6 @@ const DateBasicInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 150px;
-  padding: 10px;
 `;
 
 const ImageDegreeContainer = styled.div`

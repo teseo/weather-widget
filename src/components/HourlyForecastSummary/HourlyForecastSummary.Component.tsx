@@ -5,7 +5,6 @@ import HourlyForecastUnit from '../HourlyForecastUnit';
 const HourlyForecastSummaryContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
   justify-content: space-between;
 
 `;
