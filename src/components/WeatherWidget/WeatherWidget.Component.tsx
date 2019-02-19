@@ -6,6 +6,7 @@ import HourlyForecastSummary from '../HourlyForecastSummary';
 import ForecastSummary from '../ForecastSummary';
 import ApiService from "../../utils";
 
+const MAX_HOURLY_DISPLAY_DATE = 8;
 const WidgetContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -42,7 +43,7 @@ type City = {
   name: string;
   country: string;
 }
-type Forecast = {
+export type Forecast = {
   city: string;
   day: string;
   degrees: number;
@@ -54,7 +55,7 @@ type Forecast = {
   rain: number;
   wind: number;
 }
-type ForecastList = {
+export type ForecastList = {
   [index: string]: Forecast;
 }
 type MyState = {
@@ -108,10 +109,10 @@ export default class WeatherComponent extends Component<{}, MyState> {
             icon: item.weather[0].icon,
             description: item.weather[0].description,
             hour: dateData[1].slice(0, -3),
-            max: item.main.temp_max,
-            min: item.main.temp_min,
-            wind: item.wind.speed,
-            degrees: item.main.temp
+            max: Math.round(item.main.temp_max),
+            min: Math.round(item.main.temp_min),
+            wind: Math.round(item.wind.speed),
+            degrees: Math.round(item.main.temp)
           };
         if (currentWeather.city === '') {
           currentWeather = currentDate[item.dt_txt];
@@ -131,6 +132,23 @@ export default class WeatherComponent extends Component<{}, MyState> {
   }
 
   render() {
+    let HourlyForecastSummaryList: any = [];
+    let ForecastSummaryList: any = [];
+    let forecast: any = [];
+    if (this.state && this.state.list) {
+      for (let key in this.state.list) {
+        let forecast = this.state.list[key];
+        for (let keyForecast in forecast) {
+          let dayData = forecast[keyForecast];
+          if (HourlyForecastSummaryList.length <= MAX_HOURLY_DISPLAY_DATE) {
+            HourlyForecastSummaryList.push(dayData);
+          }
+          if(ForecastSummaryList[key] == undefined){
+            ForecastSummaryList[key] = dayData;
+          }
+        }
+      }
+    }
     return (
       <WidgetContainer>
         <TopContainer>
@@ -154,10 +172,15 @@ export default class WeatherComponent extends Component<{}, MyState> {
             }
 
           </CurrentInfoContainer>
-          <HourlyForecastSummary/>
+          {this.state &&
+          this.state.list != null &&
+          this.state.list[this.state.current.day] !== []
+          &&
+          <HourlyForecastSummary list={HourlyForecastSummaryList}/>
+          }
         </TopContainer>
         <BottomContainer>
-          <ForecastSummary/>
+          <ForecastSummary list={ForecastSummaryList}/>
         </BottomContainer>
       </WidgetContainer>
     );

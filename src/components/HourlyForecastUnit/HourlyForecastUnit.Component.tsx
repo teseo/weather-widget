@@ -19,15 +19,19 @@ const DegreeText = styled.text`
 const TimeText = styled.text`
 
 `;
-export default class HourlyForecastUnit extends Component {
+type MyProps = {
+  degree: number,
+  time: string,
+};
+export default class HourlyForecastUnit extends Component<MyProps, {}> {
   render() {
     return (
       <HourlyForecastUnitContainer>
         <ForecastUnitButton onClick={(event: React.MouseEvent<HTMLElement>) => {
           alert('Pepe');
         }}>
-          <DegreeText>8</DegreeText>
-          <TimeText>10:00</TimeText>
+          <DegreeText>{this.props.degree}</DegreeText>
+          <TimeText>{this.props.time}</TimeText>
         </ForecastUnitButton>
       </HourlyForecastUnitContainer>
     );

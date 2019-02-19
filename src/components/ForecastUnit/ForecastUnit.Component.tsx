@@ -47,18 +47,27 @@ const WeatherImage = styled.img`
   width: 50px;
   height: 50px;
 `;
-export default class HourlyForecastUnit extends Component {
+
+type MyProps = {
+  date: string,
+  icon: string,
+  min: string,
+  max: string,
+}
+export default class HourlyForecastUnit extends Component<MyProps, {}> {
   render() {
+    const {date, icon, max, min} = this.props;
+    const iconImage = "http://openweathermap.org/img/w/"+ icon +".png"
     return (
       <ForecastUnitContainer>
         <ForecastUnitButton onClick={(event: React.MouseEvent<HTMLElement>) => {
           alert('Pepa');
         }}>
-          <DateText>Tue</DateText>
-          <WeatherImage src="http://openweathermap.org/img/w/10n.png"/>
+          <DateText>{date}</DateText>
+          <WeatherImage src={iconImage}/>
           <TextContainer>
-            <DegreeLeftText>9°</DegreeLeftText>
-            <DegreeRightText>9°</DegreeRightText>
+            <DegreeLeftText>{min}°</DegreeLeftText>
+            <DegreeRightText>{max}°</DegreeRightText>
           </TextContainer>
         </ForecastUnitButton>
       </ForecastUnitContainer>
