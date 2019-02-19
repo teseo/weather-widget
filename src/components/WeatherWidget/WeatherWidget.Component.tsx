@@ -47,7 +47,6 @@ type ForecastMain = {
 }
 type ForecastRain = {
   '3h': number;
-  temp_min: number;
 }
 type ForecastWind = {
   speed: number;
@@ -82,7 +81,10 @@ export default class WeatherComponent extends Component<{}, MyState> {
               icon="10n"
               degrees={8}
             />
-            <ConditionsInfo/>
+            <ConditionsInfo
+              rain={0.09}
+              wind={5.47}
+            />
           </CurrentInfoContainer>
           <HourlyForecastSummary/>
         </TopContainer>

@@ -11,13 +11,17 @@ const ConditionsInfoContainer = styled.div`
   flex-direction: column;
   margin-top: 150px;
 `;
-
-export default class ConditionsInfo extends Component {
+type MyProps = {
+  rain: number;
+  wind: number
+}
+export default class ConditionsInfo extends Component<MyProps, {}> {
   render() {
+    const {rain, wind} = this.props;
     return (
       <ConditionsInfoContainer>
-        <ConditionsInfoText>Rain in last 3h: 0.09 mm</ConditionsInfoText>
-        <ConditionsInfoText>Wind Speed: 5.47 mps</ConditionsInfoText>
+        <ConditionsInfoText>Rain in last 3h: {rain} mm</ConditionsInfoText>
+        <ConditionsInfoText>Wind Speed: {wind} mps</ConditionsInfoText>
       </ConditionsInfoContainer>
     );
   }
