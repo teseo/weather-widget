@@ -1,0 +1,47 @@
+{
+  "day": "Wednesday",
+  "city": "Edinburgh GB",
+  "rain": 1.04,
+  "icon": "10n",
+  "description": "light rain",
+  "hour": "21:00",
+  "max": 10,
+  "min": 9,
+  "wind": 7,
+  "degrees": 10,
+  "item": {
+    "dt": 1550696400,
+    "main": {
+      "temp": 9.71,
+      "temp_min": 9.32,
+      "temp_max": 9.71,
+      "pressure": 998.32,
+      "sea_level": 1023.74,
+      "grnd_level": 998.32,
+      "humidity": 92,
+      "temp_kf": 0.39
+    },
+    "weather": [
+      {
+        "id": 500,
+        "main": "Rain",
+        "description": "light rain",
+        "icon": "10n"
+      }
+    ],
+    "clouds": {
+      "all": 92
+    },
+    "wind": {
+      "speed": 6.96,
+      "deg": 224
+    },
+    "rain": {
+      "3h": 1.04
+    },
+    "sys": {
+      "pod": "n"
+    },
+    "dt_txt": "2019-02-20 21:00:00"
+  }
+}

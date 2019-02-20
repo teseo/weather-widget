@@ -1,9 +1,12 @@
 import { FETCH_FORECAST_LIST, UPDATE_CURRENT_FORECAST } from "../actions/types";
 import { ForecastService } from "../../utils";
 
-const initialState = {
+export const initialState = {
   list: [],
-  current: {}
+  current: {},
+  city: "",
+  weeklyForecast: [],
+  hourlyForecast: []
 };
 
 export default function(state = initialState, action) {
