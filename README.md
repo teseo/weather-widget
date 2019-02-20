@@ -29,12 +29,11 @@ Is the first time that I work with typescript (I worked with flow), in general b
 I wouldn't abuse of the `any` type as I've done in this code test.
 
 In this test I'm using Edinburgh as city and query once the api to avoid saturating my account. Ideally it should have
-an input to enter the city you want to see the weather forecast.
+an input to enter the city you want to see the weather forecast. The api call can be seen in the network tab within the Chrome dev tools.
 
 I used `styled components` because I think it makes the code more readable and gives more flexibility to work with CSS dynamically
 
-I was a bit rusty after the paternity leave and I had to refresh my knowledge
-on redux.
+I was a bit rusty after the paternity leave and I had to refresh my knowledge on redux and catch up with React.js after 8 months.
 
 I wrote tests for the redux async action, for the reducer and in general I left the test from the create-react-app as I had it open in my terminal all the time and was very useful to see if anything was broken.
 
