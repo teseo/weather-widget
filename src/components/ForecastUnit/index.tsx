@@ -1,3 +1,3 @@
-import ForecastUnit from "./ForecastUnit.Component";
+import ForecastUnit from "./ForecastUnit.container";
 
 export default ForecastUnit;

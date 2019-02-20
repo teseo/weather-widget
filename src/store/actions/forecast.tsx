@@ -2,7 +2,7 @@ import ApiService, {
   ForecastService,
   MAX_HOURLY_DISPLAY_DATE
 } from "../../utils";
-import { FETCH_FORECAST_LIST } from "./types";
+import { FETCH_FORECAST_LIST, UPDATE_CURRENT_FORECAST } from "./types";
 
 export const fetchForecastList = () => async dispatch => {
   const weatherData: any = await ApiService.getWeatherForecast();
@@ -17,6 +17,18 @@ export const fetchForecastList = () => async dispatch => {
       current: processedForecastData.currentWeather,
       hourlyForecast: processedForecastData.HourlyForecastSummaryList,
       weeklyForecast: processedForecastData.weeklyForecastFormatted
+    }
+  });
+};
+
+export const updateCurrentForecast = (
+  item: any,
+  city: string
+) => dispatch => {
+  dispatch({
+    type: UPDATE_CURRENT_FORECAST,
+    payload: {
+      current: ForecastService.getFormattedForecastItem(item, city)
     }
   });
 };

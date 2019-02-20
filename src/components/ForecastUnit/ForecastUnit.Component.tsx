@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import styled from "styled-components";
+import {Forecast} from "../../types";
 
 const ForecastUnitContainer = styled.div`
   height: 90px;
@@ -47,24 +48,23 @@ const WeatherImage = styled.img`
 `;
 
 type MyProps = {
-  date: string;
-  icon: string;
-  min: number;
-  max: number;
+  forecast: any;
+  current: Forecast;
+  updateCurrentForecast(item: any, city: string): () => void;
 };
 export default class HourlyForecastUnit extends Component<MyProps, {}> {
   render() {
-    const { date, icon, max, min } = this.props;
+    const {date, icon, max, min, item, city} = this.props.forecast;
     const iconImage = "http://openweathermap.org/img/w/" + icon + ".png";
     return (
       <ForecastUnitContainer>
         <ForecastUnitButton
           onClick={(event: React.MouseEvent<HTMLElement>) => {
-            alert("Pepa");
+            this.props.updateCurrentForecast(item, city);
           }}
         >
           <DateText>{date}</DateText>
-          <WeatherImage src={iconImage} />
+          <WeatherImage src={iconImage}/>
           <TextContainer>
             <DegreeLeftText>{min}°</DegreeLeftText>
             <DegreeRightText>{max}°</DegreeRightText>

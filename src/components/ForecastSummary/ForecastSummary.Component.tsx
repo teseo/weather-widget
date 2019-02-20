@@ -21,10 +21,7 @@ export default class ForecastSummary extends Component<MyProps, {}> {
         return (
           <ForecastUnit
             key={index}
-            date={forecast.day.substring(0, 3)}
-            icon={forecast.icon}
-            max={forecast.max}
-            min={forecast.min}
+            forecast={forecast}
           />
         );
       });

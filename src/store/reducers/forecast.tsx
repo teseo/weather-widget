@@ -19,7 +19,7 @@ export default function(state = initialState, action) {
     case UPDATE_CURRENT_FORECAST:
       return {
         ...state,
-        current: action.payload
+        current: action.payload.current
       };
     default:
       return state;
