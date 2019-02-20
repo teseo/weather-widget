@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const ConditionsInfoText = styled.text`
   color: rgb(135, 135, 135);
@@ -13,11 +13,11 @@ const ConditionsInfoContainer = styled.div`
 `;
 type MyProps = {
   rain: number;
-  wind: number
-}
+  wind: number;
+};
 export default class ConditionsInfo extends Component<MyProps, {}> {
   render() {
-    const {rain, wind} = this.props;
+    const { rain, wind } = this.props;
     return (
       <ConditionsInfoContainer>
         <ConditionsInfoText>Rain in last 3h: {rain} mm</ConditionsInfoText>
@@ -26,4 +26,3 @@ export default class ConditionsInfo extends Component<MyProps, {}> {
     );
   }
 }
-

@@ -1,11 +1,11 @@
-import {FETCH_FORECAST_LIST, UPDATE_CURRENT_FORECAST} from "../actions/types";
+import { FETCH_FORECAST_LIST, UPDATE_CURRENT_FORECAST } from "../actions/types";
 
 const initialState = {
   list: [],
   current: {}
 };
 
-export default function (state = initialState, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case FETCH_FORECAST_LIST:
       return {

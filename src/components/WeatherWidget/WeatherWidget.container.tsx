@@ -1,7 +1,7 @@
-import {fetchForecastList} from "../../store/actions/forecast";
-import {connect} from 'react-redux';
+import { fetchForecastList } from "../../store/actions/forecast";
+import { connect } from "react-redux";
 
-import WeatherWidget from './WeatherWidget.Component';
+import WeatherWidget from "./WeatherWidget.Component";
 
 const mapStateToProps = state => ({
   list: state.forecast.list,

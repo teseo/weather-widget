@@ -1,15 +1,14 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const ForecastUnitContainer = styled.div`
   height: 90px;
   margin-top: 10px;
-    border: 1px;
-
+  border: 1px;
 `;
 
 const ForecastUnitButton = styled.button`
-  color: rgb(34,34,34);
+  color: rgb(34, 34, 34);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,12 +35,11 @@ const DateText = styled.text`
 `;
 
 const DegreeLeftText = styled(DegreeText)`
-  color: rgb(135,135,135);
+  color: rgb(135, 135, 135);
   padding-right: 5px;
-
 `;
 const DegreeRightText = styled(DegreeText)`
-  color: rgb(186,186,186);
+  color: rgb(186, 186, 186);
 `;
 const WeatherImage = styled.img`
   width: 50px;
@@ -49,22 +47,24 @@ const WeatherImage = styled.img`
 `;
 
 type MyProps = {
-  date: string,
-  icon: string,
-  min: number,
-  max: number,
-}
+  date: string;
+  icon: string;
+  min: number;
+  max: number;
+};
 export default class HourlyForecastUnit extends Component<MyProps, {}> {
   render() {
-    const {date, icon, max, min} = this.props;
-    const iconImage = "http://openweathermap.org/img/w/"+ icon +".png"
+    const { date, icon, max, min } = this.props;
+    const iconImage = "http://openweathermap.org/img/w/" + icon + ".png";
     return (
       <ForecastUnitContainer>
-        <ForecastUnitButton onClick={(event: React.MouseEvent<HTMLElement>) => {
-          alert('Pepa');
-        }}>
+        <ForecastUnitButton
+          onClick={(event: React.MouseEvent<HTMLElement>) => {
+            alert("Pepa");
+          }}
+        >
           <DateText>{date}</DateText>
-          <WeatherImage src={iconImage}/>
+          <WeatherImage src={iconImage} />
           <TextContainer>
             <DegreeLeftText>{min}°</DegreeLeftText>
             <DegreeRightText>{max}°</DegreeRightText>
@@ -74,4 +74,3 @@ export default class HourlyForecastUnit extends Component<MyProps, {}> {
     );
   }
 }
-

@@ -1,6 +1,5 @@
-import React, {Component} from 'react';
-import styled from 'styled-components';
-
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const WeatherImage = styled.img`
   width: 50px;
@@ -44,10 +43,10 @@ type MyProps = {
   description: string;
   icon: string;
   degrees: number;
-}
+};
 export default class DateBasicInfo extends Component<MyProps, {}> {
   render() {
-    const {cityName, day, description, icon, degrees} = this.props;
+    const { cityName, day, description, icon, degrees } = this.props;
     const iconImage = "http://openweathermap.org/img/w/" + icon + ".png";
     return (
       <DateBasicInfoContainer>
@@ -55,12 +54,10 @@ export default class DateBasicInfo extends Component<MyProps, {}> {
         <DateDescriptionText>{day}</DateDescriptionText>
         <DateDescriptionText>{description}</DateDescriptionText>
         <ImageDegreeContainer>
-          <WeatherImage src={iconImage}/>
+          <WeatherImage src={iconImage} />
           <DegreeText>{degrees}</DegreeText>
         </ImageDegreeContainer>
-
       </DateBasicInfoContainer>
     );
   }
 }
-
