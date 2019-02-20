@@ -1,7 +1,7 @@
 import { updateCurrentForecast } from "../../store/actions/forecast";
 import { connect } from "react-redux";
 
-import ForecastUnit from "./ForecastUnit.Component";
+import HourlyForecastUnit from "./HourlyForecastUnit.Component";
 
 const mapStateToProps = state => ({
   city: state.forecast.city,
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch: any): any => ({
   updateCurrentForecast: (item: any, city: string) =>
     dispatch(updateCurrentForecast(item, city))
 });
-export default connect(mapStateToProps, mapDispatchToProps)(ForecastUnit);
+export default connect(mapStateToProps, mapDispatchToProps)(HourlyForecastUnit);

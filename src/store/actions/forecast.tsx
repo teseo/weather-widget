@@ -1,7 +1,4 @@
-import ApiService, {
-  ForecastService,
-  MAX_HOURLY_DISPLAY_DATE
-} from "../../utils";
+import ApiService, { ForecastService } from "../../utils";
 import { FETCH_FORECAST_LIST, UPDATE_CURRENT_FORECAST } from "./types";
 
 export const fetchForecastList = () => async dispatch => {
@@ -21,10 +18,7 @@ export const fetchForecastList = () => async dispatch => {
   });
 };
 
-export const updateCurrentForecast = (
-  item: any,
-  city: string
-) => dispatch => {
+export const updateCurrentForecast = (item: any, city: string) => dispatch => {
   dispatch({
     type: UPDATE_CURRENT_FORECAST,
     payload: {

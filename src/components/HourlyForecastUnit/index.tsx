@@ -1,3 +1,3 @@
-import HourlyForecastUnit from "./HourlyForecastUnit.Component";
+import HourlyForecastUnit from "./HourlyForecastUnit.container";
 
 export default HourlyForecastUnit;

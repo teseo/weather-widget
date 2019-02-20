@@ -13,7 +13,7 @@ export default class ApiService {
 
 export class ForecastService {
   static getDayName(date: string) {
-    return new Date(date).toLocaleDateString("EN-GB", {weekday: "long"});
+    return new Date(date).toLocaleDateString("EN-GB", { weekday: "long" });
   }
   static processForecastData(weatherData: any): any {
     const list = weatherData.list;

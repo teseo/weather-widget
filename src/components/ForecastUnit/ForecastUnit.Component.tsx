@@ -1,6 +1,6 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
-import {Forecast} from "../../types";
+import { Forecast } from "../../types";
 
 const ForecastUnitContainer = styled.div`
   height: 90px;
@@ -54,17 +54,17 @@ type MyProps = {
 };
 export default class HourlyForecastUnit extends Component<MyProps, {}> {
   render() {
-    const {date, icon, max, min, item, city} = this.props.forecast;
+    const { day, icon, max, min, item, city } = this.props.forecast;
     const iconImage = "http://openweathermap.org/img/w/" + icon + ".png";
     return (
       <ForecastUnitContainer>
         <ForecastUnitButton
-          onClick={(event: React.MouseEvent<HTMLElement>) => {
+          onClick={() => {
             this.props.updateCurrentForecast(item, city);
           }}
         >
-          <DateText>{date}</DateText>
-          <WeatherImage src={iconImage}/>
+          <DateText>{day.substring(0, 3)}</DateText>
+          <WeatherImage src={iconImage} />
           <TextContainer>
             <DegreeLeftText>{min}°</DegreeLeftText>
             <DegreeRightText>{max}°</DegreeRightText>

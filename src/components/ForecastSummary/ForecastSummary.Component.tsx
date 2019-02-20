@@ -18,12 +18,7 @@ export default class ForecastSummary extends Component<MyProps, {}> {
     if (this.props.list) {
       content = this.props.list.map(forecast => {
         index++;
-        return (
-          <ForecastUnit
-            key={index}
-            forecast={forecast}
-          />
-        );
+        return <ForecastUnit key={index} forecast={forecast} />;
       });
     }
     return <ForecastSummaryContainer>{content}</ForecastSummaryContainer>;

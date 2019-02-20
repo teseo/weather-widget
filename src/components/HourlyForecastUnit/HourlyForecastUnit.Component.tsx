@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Forecast } from "../../types";
 
 const HourlyForecastUnitContainer = styled.div``;
 
@@ -15,20 +16,23 @@ const ForecastUnitButton = styled.button`
 const DegreeText = styled.text``;
 const TimeText = styled.text``;
 type MyProps = {
-  degree: number;
-  time: string;
+  forecast: Forecast;
+  updateCurrentForecast(item: any, city: string): () => void;
 };
 export default class HourlyForecastUnit extends Component<MyProps, {}> {
   render() {
+    const { item, city, degrees, hour } = this.props.forecast;
+
     return (
       <HourlyForecastUnitContainer>
         <ForecastUnitButton
-          onClick={(event: React.MouseEvent<HTMLElement>) => {
-            alert("Pepe");
+          onClick={() => {
+            this.props.updateCurrentForecast(item, city);
           }}
         >
-          <DegreeText>{this.props.degree}</DegreeText>
-          <TimeText>{this.props.time}</TimeText>
+          <DegreeText>{degrees}</DegreeText>
+          <hr />
+          <TimeText>{hour}</TimeText>
         </ForecastUnitButton>
       </HourlyForecastUnitContainer>
     );
