@@ -1,7 +1,10 @@
 // @flow
 
 import forecastReducer, { initialState } from "../../reducers/forecast";
-import { FETCH_FORECAST_LIST, UPDATE_CURRENT_FORECAST } from "../../actions/types";
+import {
+  FETCH_FORECAST_LIST_FULFILLED,
+  UPDATE_CURRENT_FORECAST_FULFILLED
+} from "../../actions/types";
 
 const payloadData = require("./../data/payload.json");
 const currentData = require("./../data/current.json");
@@ -15,7 +18,7 @@ describe("forecast reducer", () => {
   it("sets the state after data is received, in the store", () => {
     expect(
       forecastReducer(initialState, {
-        type: FETCH_FORECAST_LIST,
+        type: FETCH_FORECAST_LIST_FULFILLED,
         payload: {
           rawList: payloadData,
           cityName: "Edinburgh GB",
@@ -35,8 +38,8 @@ describe("forecast reducer", () => {
   it("sets a new current forecast in the store", () => {
     expect(
       forecastReducer(stateWithData, {
-        "type": "UPDATE_CURRENT_FORECAST",
-        "payload": currentPayload
+        type: UPDATE_CURRENT_FORECAST_FULFILLED,
+        payload: currentPayload
       })
     ).toMatchObject(storeUpdated);
   });

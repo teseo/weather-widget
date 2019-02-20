@@ -1,0 +1,26 @@
+{
+  "dt": 1550880000,
+  "main": {
+    "temp": 10.66,
+    "temp_min": 10.66,
+    "temp_max": 10.66,
+    "pressure": 1015.03,
+    "sea_level": 1040.85,
+    "grnd_level": 1015.03,
+    "humidity": 68,
+    "temp_kf": 0
+  },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04n"
+    }
+  ],
+  "clouds": { "all": 68 },
+  "wind": { "speed": 6.57, "deg": 185.501 },
+  "rain": {},
+  "sys": { "pod": "n" },
+  "dt_txt": "2019-02-23 00:00:00"
+}

@@ -1,4 +1,7 @@
-import { FETCH_FORECAST_LIST, UPDATE_CURRENT_FORECAST } from "../actions/types";
+import {
+  FETCH_FORECAST_LIST_FULFILLED,
+  UPDATE_CURRENT_FORECAST_FULFILLED
+} from "../actions/types";
 import { ForecastService } from "../../utils";
 
 export const initialState = {
@@ -11,7 +14,7 @@ export const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case FETCH_FORECAST_LIST:
+    case FETCH_FORECAST_LIST_FULFILLED:
       return {
         ...state,
         list: action.payload.rawList,
@@ -20,7 +23,7 @@ export default function(state = initialState, action) {
         hourlyForecast: action.payload.hourlyForecast,
         current: action.payload.current
       };
-    case UPDATE_CURRENT_FORECAST:
+    case UPDATE_CURRENT_FORECAST_FULFILLED:
       const hourlyForecast = ForecastService.getHourlyForecast(
         state.list,
         action.payload.current
