@@ -1,4 +1,7 @@
 import { FETCH_FORECAST_LIST, UPDATE_CURRENT_FORECAST } from "../actions/types";
+import {
+  ForecastService
+} from "../../utils";
 
 const initialState = {
   list: [],
@@ -17,9 +20,11 @@ export default function(state = initialState, action) {
         current: action.payload.current
       };
     case UPDATE_CURRENT_FORECAST:
+      const hourlyForecast = ForecastService.getHourlyForecast(state.list, action.payload.current);
       return {
         ...state,
-        current: action.payload.current
+        current: action.payload.current,
+        hourlyForecast
       };
     default:
       return state;

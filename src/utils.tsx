@@ -13,7 +13,7 @@ export default class ApiService {
 
 export class ForecastService {
   static getDayName(date: string) {
-    return new Date(date).toLocaleDateString("EN-GB", { weekday: "long" });
+    return new Date(date).toLocaleDateString("EN-GB", {weekday: "long"});
   }
   static processForecastData(weatherData: any): any {
     const list = weatherData.list;
@@ -62,6 +62,25 @@ export class ForecastService {
       HourlyForecastSummaryList
     };
   }
+  static getHourlyForecast(list: any, currentItem: any): Array<Forecast> {
+    const city = currentItem.city;
+    let hourlyForecast: Array<Forecast> = [];
+    let switchVar = 0;
+    list.some((item: any) => {
+      if (item.dt == currentItem.item.dt) {
+        hourlyForecast.push(this.getFormattedForecastItem(item, city));
+        switchVar++;
+      } else if (switchVar > 0 && switchVar <= MAX_HOURLY_DISPLAY_DATE) {
+        hourlyForecast.push(this.getFormattedForecastItem(item, city));
+        switchVar++;
+      }
+      if (switchVar > MAX_HOURLY_DISPLAY_DATE) {
+        return true;
+      }
+    });
+    return hourlyForecast;
+  }
+
   static getFormattedForecastItem(item: any, city: string): Forecast {
     const dateData = item.dt_txt.split(" ");
     const hour = dateData[1].slice(0, -3);
