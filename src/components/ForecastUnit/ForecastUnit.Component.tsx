@@ -51,8 +51,8 @@ const WeatherImage = styled.img`
 type MyProps = {
   date: string,
   icon: string,
-  min: string,
-  max: string,
+  min: number,
+  max: number,
 }
 export default class HourlyForecastUnit extends Component<MyProps, {}> {
   render() {

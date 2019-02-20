@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import HourlyForecastUnit from '../HourlyForecastUnit';
-import {ForecastList} from "../WeatherWidget/WeatherWidget.Component";
+import {Forecast} from "../WeatherWidget/WeatherWidget.Component";
 
 const HourlyForecastSummaryContainer = styled.div`
   display: flex;
@@ -15,18 +15,13 @@ const InfoText = styled.text`
 
 `;
 type MyProps = {
-  list: Array<ForecastList>
+  list: Array<Forecast>
 }
 export default class HourlyForecastSummary extends Component<MyProps, {}> {
   render() {
-    let list: any = [];
 
-    for (let key in this.props.list) {
-      let forecast = this.props.list[key];
-      list.push(forecast);
-    }
-    let index: number = 0
-    const content = list.map((forecast) => {
+    let index: number = 0;
+    const content = this.props.list.map((forecast) => {
         index++;
         return (<HourlyForecastUnit key={index} degree={forecast.degrees} time={forecast.hour}/>
         );
