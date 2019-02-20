@@ -2,7 +2,7 @@ import axios from "axios";
 import { Forecast } from "./types";
 
 const DATA_URL =
-  "http://api.openweathermap.org/data/2.5/forecast?q=Edinburgh,uk&APPID=5902e987084211ae3f2fe0ed9fbafca9&units=metric";
+  "https://api.openweathermap.org/data/2.5/forecast?q=Edinburgh,uk&APPID=5902e987084211ae3f2fe0ed9fbafca9&units=metric";
 export const MAX_HOURLY_DISPLAY_DATE = 8;
 export default class ApiService {
   static async getWeatherForecast(): Promise<Array<any>> {
