@@ -21,8 +21,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Deployment
 
-The deployment can be seen [https://teseo.github.io/weather-widget/index.html](https://teseo.github.io/weather-widget/index.html). For some reason the deployment wouldn't
-work if there's no `index.html` in the url
+The deployment can be seen [https://teseo.github.io/weather-widget](https://teseo.github.io/weather-widget).
 
 ## Thoughts
 
