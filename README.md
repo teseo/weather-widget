@@ -28,6 +28,8 @@ work if there's no `index.html` in the url
 Is the first time that I work with typescript (I worked with flow), in general basis,
 I wouldn't abuse of the `any` type as I've done in this code test.
 
+As for the UI I got some inspiration in the Google Weather Widget.
+
 In this test I'm using Edinburgh as city and query once the api to avoid saturating my account. Ideally it should have
 an input to enter the city you want to see the weather forecast. The api call can be seen in the network tab within the Chrome dev tools.
 
