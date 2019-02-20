@@ -36,4 +36,6 @@ I used `styled components` because I think it makes the code more readable and g
 I was a bit rusty after the paternity leave and I had to refresh my knowledge
 on redux.
 
+I wrote tests for the redux async action, for the reducer and in general I left the test from the create-react-app as I had it open in my terminal all the time and was very useful to see if anything was broken.
+
 Is the first time that I deploy a page to github pages. In a commercial site, the open weather api key wouln't be in this repo.
