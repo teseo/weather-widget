@@ -47,7 +47,7 @@ type MyProps = {
 export default class DateBasicInfo extends Component<MyProps, {}> {
   render() {
     const { cityName, day, description, icon, degrees } = this.props;
-    const iconImage = "http://openweathermap.org/img/w/" + icon + ".png";
+    const iconImage = "https://openweathermap.org/img/w/" + icon + ".png";
     return (
       <DateBasicInfoContainer>
         <CityText>{cityName}</CityText>
