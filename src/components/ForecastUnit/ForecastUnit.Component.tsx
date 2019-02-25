@@ -55,7 +55,7 @@ type MyProps = {
 export default class HourlyForecastUnit extends Component<MyProps, {}> {
   render() {
     const { day, icon, max, min, item, city } = this.props.forecast;
-    const iconImage = "http://openweathermap.org/img/w/" + icon + ".png";
+    const iconImage = "https://openweathermap.org/img/w/" + icon + ".png";
     return (
       <ForecastUnitContainer>
         <ForecastUnitButton
