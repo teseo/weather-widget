@@ -84,10 +84,11 @@ export class ForecastService {
   static getFormattedForecastItem(item: any, city: string): Forecast {
     const dateData = item.dt_txt.split(" ");
     const hour = dateData[1].slice(0, -3);
+
     return {
       day: this.getDayName(item.dt_txt),
       city: city,
-      rain: item.rain["3h"] ? item.rain["3h"] : 0,
+      rain: item.rain? item.rain["3h"] ? item.rain["3h"] : 0: 0,
       icon: item.weather[0].icon,
       description: item.weather[0].description,
       hour: hour,
